@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/58c7ea2d35.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/static/style/style.css">
+  <title>Alpha shop</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- header -->
+    <header>
+      <div class="header-container">
+        <div class="brand">
+          <a href="#" class="brand-link">
+            <div class="brand-img"></div>
+          </a>
+        </div>
+        <input type="checkbox" class="navbar-toggle" id="navbar-toggle">
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-list-item">
+              <a href="#" class="nav-list-item-link men">男款</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="#" class="nav-list-item-link women">女款</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="#" class="nav-list-item-link news">最新消息</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="#" class="nav-list-item-link contact">聯絡我們</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="#" class="nav-list-item-link customized">客製商品</a>
+            </li>
+          </ul>
+          <ul class="nav-function">
+            <li class="nav-function-item">
+              <a href="#" class="nav-function-item-link search">
+                <div class="nav-function-item-img search-img">
+                </div>
+              </a>
+            </li>
+            <li class="nav-function-item">
+              <a href="#" class="nav-function-item-link cart">
+                <div class="nav-function-item-img cart-img">
+                </div>
+              </a>
+            </li>
+            <li class="nav-function-item">
+              <a href="#" class="nav-function-item-link">
+                <input type="checkbox" id="darkmode-toggle">
+                <label class="darkmode-toggle-label" for="darkmode-toggle">
+                  <div class="nav-function-item-img darkmode-toggle-img">
+                  </div>
+                </label>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <label for="navbar-toggle" class="navbar-toggle-label">
+          <img src="/static/icons/Vector@hamburger2x.png" alt="menu icon" class="hamburger">
+        </label>
+      </div>
+    </header>
+
+    <!-- main -->
+    <div class="main-content main-container">
+      <h2 class="main-title">結帳</h2>
+      <!-- stepper -->
+      <div id="stepper-control" class="stepper-panel">
+        <div class="stepper-container container">
+          <div class="step default active">
+            <div class="step-circle-container"></div>
+            <div class="step-label-container d-none active">寄送地址</div>
+          </div>
+          <div class="step">
+            <div class="step-circle-container"></div>
+            <span class="step-connect-line active"></span>
+            <div class="step-label-container d-none">運送方式</div>
+          </div>
+          <div class="step">
+            <div class="step-circle-container"></div>
+            <span class="step-connect-line"></span>
+            <div class="step-label-container d-none">付款資訊</div>
+          </div>
+        </div>
+      </div>
+      <!-- form -->
+      <div class="form-panel">
+        <div class="form-container">
+          <form id="a-form">
+            <div class="form-content">
+              <!-- form part 1 -->
+              <div class="part">
+                <h2 class="part-title">寄送地址</h2>
+                <div class="form-wrapper">
+                  <div class="form-row gender">
+                    <label for="">稱謂</label>
+                    <div class="select-container">
+                      <select name="gender" id="gender">
+                        <option value="men">先生</option>
+                        <option value="women">女士</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row name">
+                    <label for="">姓名</label>
+                    <input id="name" type="text" placeholder="請輸入姓名">
+                  </div>
+                </div>
+                <div class="form-wrapper">
+                  <div class="form-row cel">
+                    <label for="">電話</label>
+                    <input id="cel" type="text" placeholder="請輸入行動電話">
+                  </div>
+                  <div class="form-row email">
+                    <label for="">Email</label>
+                    <input id="email" type="text" placeholder="請輸入電子郵件">
+                  </div>
+                </div>
+                <div class="form-wrapper">
+                  <div class="form-row city">
+                    <label for="">縣市</label>
+                    <div class="select-container">
+                      <select name="city" id="place" required>
+                        <option value="" disabled selected>請選擇縣市</option>
+                        <option value="taipei">台北</option>
+                        <option value="new taipei">新北</option>
+                        <option value="taoyuan">桃園</option>
+                        <option value="taichung">台中</option>
+                        <option value="tainan">台南</option>
+                        <option value="kaohsiung">高雄</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row address">
+                    <label for="">地址</label>
+                    <input id="address" type="text" placeholder="請輸入地址">
+                  </div>
+                </div>
+              </div>
+              <!-- form part 2 -->
+              <div class="part d-none">
+                <h2 class="part-title">運送方式</h2>
+                <div class="form-row standard">
+                  <input type="radio" name="shipping" value="standard" checked>
+                  <label for="">標準運送
+                    <span>約3~7個工作天</span>
+                  </label>
+                  <span>免費</span>
+                </div>
+                <div class="form-row dhl">
+                  <input type="radio" name="shipping" value="dhl">
+                  <label for="">DHL貨運
+                    <span>48小時內送達</span>
+                  </label>
+                  <span>$500</span>
+                </div>
+              </div>
+              <!-- form part 3 -->
+              <div class="part d-none">
+                <h2 class="part-title">付款資訊</h2>
+                <div class="form-row card-name">
+                  <label for="">持卡人姓名</label>
+                  <input id="card-name" type="text" placeholder="John Doe">
+                </div>
+                <div class="form-row card-number">
+                  <label for="">卡號</label>
+                  <input id="card-number" type="text" placeholder="1111 2222 3333 4444">
+                </div>
+                <div class="form-wrapper">
+                  <div class="form-row card-expire">
+                    <label for="">有效期限</label>
+                    <input id="card-expire" type="text" placeholder="MM/YY">
+                  </div>
+                  <div class="form-row card-code">
+                    <label for="">CVC/CCV</label>
+                    <input id="card-code" type="text" placeholder="123">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- cart -->
+      <div id="cart-control" class="cart-panel">
+        <div class="cart-container container">
+          <p class="cart-title">購物籃</p>
+          <div class="cart-item product">
+            <img src="/static/images/Block@product1-2x.png" alt="product" class="product-img">
+            <div class="product-info">
+              <div class="product-info-detail-wrapper">
+                <p class="product-info-detail title">破壞補丁修身牛仔褲</p>
+                <div class="product-info-detail count">
+                  <img src="/static/icons/icon@minus2x.png" alt="">
+                  <span>1</span>
+                  <img src="/static/icons/icon@plus2x.png" alt="">
+                </div>
+              </div>
+              <p class="product-info-detail price">$3,999</p>
+            </div>
+          </div>
+          <div class="cart-item product">
+            <img src="/static/images/Block@product2-2x.png" alt="product" class="product-img">
+            <div class="product-info">
+              <div class="product-info-detail-wrapper">
+                <p class="product-info-detail title">刷色直筒牛仔褲</p>
+                <div class="product-info-detail count">
+                  <img src="/static/icons/icon@minus2x.png" alt="">
+                  <span>1</span>
+                  <img src="/static/icons/icon@plus2x.png" alt="">
+                </div>
+              </div>
+              <p class="product-info-detail price">$1,299</p>
+            </div>
+          </div>
+          <div class="cart-item shipping">
+            <span>運費</span>
+            <span class="price">免費</span>
+          </div>
+          <div class="cart-item total">
+            <span>小計</span>
+            <span class="price">$5,298</span>
+          </div>
+        </div>
+      </div>
+      <!-- button-->
+      <div id="btn-control" class="btn-panel">
+        <button class="btn btn-outline d-none">上一步</button>
+        <button class="btn btn-primary">下一步</button>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-brand-img"></div>
+        </div>
+        <div class="footer-list">
+          <div class="footer-list-item-wrapper">
+            <div class="footer-list-item faq">
+              <p>客戶服務</p>
+              <ul class="footer-list-item-details">
+                <li>運送說明</li>
+                <li>退換貨相關</li>
+                <li>付款資訊</li>
+                <li>FAQ</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-list-item-wrapper">
+            <div class="footer-list-item about">
+              <p>關於我們</p>
+              <ul class="footer-list-item-details">
+                <li>品牌故事</li>
+                <li>媒體聯繫</li>
+                <li>Press Kit</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-list-item-wrapper">
+            <div class="footer-list-item service">
+              <p>資訊</p>
+              <ul class="footer-list-item-details">
+                <li>隱私權政策</li>
+                <li>Cookie</li>
+                <li>GDPR</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-list-item-wrapper">
+            <div class="footer-list-item follow">
+              <p>追蹤 Alpha Shop</p>
+              <ul class="footer-list-item-details">
+                <li>+886 02123-45678</li>
+                <div>
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- include javascript -->
+  <script src="/app.js"></script>
+</body>
+
+</html>
