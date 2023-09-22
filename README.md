@@ -6,7 +6,7 @@
 - RWD (breakpoint:min-width:375px)
 
 ## Preview
-![image]()
-![image]()
+![image](https://github.com/Laylalll/shopping-cart/blob/main/static/images/lightmode.png)
+![image](https://github.com/Laylalll/shopping-cart/blob/main/static/images/darkmode.png)
 
 
